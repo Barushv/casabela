@@ -12,15 +12,15 @@ header("Access-Control-Allow-Origin: *");
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Please complete the form and try again.";
+            echo "Por favor complete el formulario e inténtelo nuevamente.";
             exit;
         }
  
         // Set the recipient email address.
-        $recipient = "demo@example.com";
+        $recipient = "israel.ortiz@ocasabela.mx";
  
         // Set the email subject.
-        $subject = 'You got a email from ' . $name;
+        $subject = 'Recibiste un correo electrónico de ' . $name;
  
         // Build the email content.
         $email_content = "Name: $name\n";
@@ -35,17 +35,17 @@ header("Access-Control-Allow-Origin: *");
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            echo "Gracias! Tu mensaje ha sido enviado :)";
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
+            echo "Oops! Algo salió mal y no se ha enviado tu mensaje.";
         }
  
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "There was a problem with your submission, please try again.";
+        echo "Hubo un problema con tu envío, por favor inténtalo de nuevo..";
     }
  
 ?>

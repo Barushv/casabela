@@ -40,7 +40,7 @@ $(function () {
           $(formMessages).text(data.responseText);
         } else {
           $(formMessages).text(
-            "Oops! An error occured and your message could not be sent."
+            "Oops! Ocurrió un error y su mensaje no pudo ser enviado."
           );
         }
       });
